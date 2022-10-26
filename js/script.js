@@ -41,12 +41,6 @@ eleBtnUp.addEventListener('click', function () {
 
     listEleImg[activeIndex].classList.remove('active');
 
-    activeIndex++;
-
-    listEleImg[activeIndex].classList.add('active');
-
-
-
     if (activeIndex === 0) {
 
         activeIndex = listEleImg.length - 1
@@ -54,6 +48,7 @@ eleBtnUp.addEventListener('click', function () {
         activeIndex--
     }
 
+    listEleImg[activeIndex].classList.add('active');
 
 
 });
@@ -63,10 +58,6 @@ eleBtnDown.addEventListener('click', function() {
 
     listEleImg[activeIndex].classList.remove('active');
 
-    activeIndex--;
-
-    listEleImg[activeIndex].classList.add('active');
-
     if (activeIndex === listEleImg.length - 1) {
 
         activeIndex = 0
@@ -74,6 +65,6 @@ eleBtnDown.addEventListener('click', function() {
         activeIndex++
     }
 
-
+    listEleImg[activeIndex].classList.add('active');
 
 });
