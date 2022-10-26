@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+}
+
+.slider {
+    position: relative;
+    margin: auto;
+    height: 50%;
+    width: 60%;
+    /* max-width: 600px;
+    max-height: 400px; */
+    background-color: salmon;
+}
+
+.controls {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.btn-up, .btn-down {
+    margin: .5rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+    background-color: white;
+}
+
+
+.slider-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.active {
+    display: block;
+}
+
+.hidden {
+    visibility: hidden;
+}
