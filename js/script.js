@@ -6,12 +6,20 @@ const arrImg = [
     'img/05.jpg',
 ];
 
+
 const eleSlider = document.querySelector('.slider');
+
 const eleBtnUp = document.querySelector('.btn-up');
+
 const eleBtnDown = document.querySelector('.btn-down');
 
 
-for (let i = 0; i < arrImg.lenght; i++) {
+
+// console.log(arrImg.lenght)
+
+for (let i = 0; i < arrImg.length; i++) {
+
+    
 
     const eleImg = document.createElement('img');
     eleImg.src = arrImg[i];
@@ -24,25 +32,48 @@ for (let i = 0; i < arrImg.lenght; i++) {
     eleSlider.append(eleImg);
 }
 
-// const listEleImg = document.querySelectorAll('.slider-img')
+const listEleImg = document.querySelectorAll('.slider-img')
 
-// let activeIndex = 0
-
-// eleBtnUp.addEventListener('click', function() {
-
-//     listEleImg[activeIndex].classList.remove('active');
-
-//     activeIndex++;
-
-//     listEleImg[activeIndex].classList.add('active');
-// });
+let activeIndex = 0
 
 
-// eleBtnDown.addEventListener('click', function() {
+eleBtnUp.addEventListener('click', function () {
 
-//     listEleImg[activeIndex].classList.remove('active');
+    listEleImg[activeIndex].classList.remove('active');
 
-//     activeIndex--;
+    activeIndex++;
 
-//     listEleImg[activeIndex].classList.add('active');
-// });
+    listEleImg[activeIndex].classList.add('active');
+
+
+
+    if (activeIndex === 0) {
+
+        activeIndex = listEleImg.length - 1
+    } else {
+        activeIndex--
+    }
+
+
+
+});
+
+
+eleBtnDown.addEventListener('click', function() {
+
+    listEleImg[activeIndex].classList.remove('active');
+
+    activeIndex--;
+
+    listEleImg[activeIndex].classList.add('active');
+
+    if (activeIndex === listEleImg.length - 1) {
+
+        activeIndex = 0
+    } else {
+        activeIndex++
+    }
+
+
+
+});
